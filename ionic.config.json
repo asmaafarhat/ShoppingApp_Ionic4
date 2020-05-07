@@ -1,0 +1,8 @@
+{
+  "name": "shoppingApp",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
