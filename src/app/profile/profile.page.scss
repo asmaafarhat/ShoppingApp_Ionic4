@@ -1,0 +1,102 @@
+ion-content {
+    .content {
+        width: 80%;
+        height: 460px;
+        background-color: white;
+        margin: 10% auto;
+        border-radius: 12px;
+        box-shadow: 5px 5px 16px 6px darkgrey;
+        overflow: auto;
+        .head {
+            font-family: 'El Messiri', sans-serif;
+            color: aliceblue;
+            background-color: #5F429C;
+            width: 180px;
+            // height: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 50px;
+            top: 20px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        .profilePic {
+            display: flex;
+            justify-content: center;
+            height: 30%;
+            align-items: flex-end;
+            img {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #5F429C;
+                border-radius: 50%;
+            }
+            ion-icon {
+                position: relative;
+                font-size: 25px;
+                bottom: 8%;
+                right: 4%;
+                color: blueviolet;
+            }
+        }
+        .inputs {
+            padding: 15px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 70%;
+            align-items: center;
+            // padding-top: 70px;
+            // font-family: 'El Messiri', sans-serif;
+            ion-item {
+                width: 90%;
+                height: 45px;
+                border-radius: 4px;
+                border: 1px solid #5F429C;
+                text-align: right;
+                // font-family: 'El Messiri', sans-serif;
+                ion-input {
+                    font-family: "El Messiri", sans-serif;
+                }
+                button {
+                    font-family: "El Messiri", sans-serif;
+                    position: relative;
+                    right: 5%;
+                    bottom: 10%;
+                }
+            }
+            ion-button {
+                border-radius: 5px;
+                width: 100px;
+                height: 30px;
+                font-family: 'El Messiri', sans-serif;
+            }
+        }
+    }
+}
+
+.modal-body {
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        font-family: 'El Messiri', sans-serif;
+        ion-item {
+            width: 90%;
+            height: 45px;
+            border-radius: 4px;
+            border: 1px solid #5F429C;
+            text-align: right;
+        }
+        ion-button {
+            font-family: 'El Messiri', sans-serif;
+            width: 30%;
+            height: 15%;
+            border-radius: 5px;
+        }
+    }
+}

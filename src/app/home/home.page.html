@@ -1,0 +1,132 @@
+<ion-content [fullscreen]="true">
+    <div class="first">
+        <div class="container">
+            <div class="box">
+                <div class="title">
+                    <span class="block"></span>
+                    <h1>Shopping <span></span></h1>
+                </div>
+
+                <div class="role">
+                    <div class="block"></div>
+                    <p>Girls & Womans</p>
+                </div>
+
+            </div>
+            <div class="second">
+                <div id="login-button" (click)='signinModule()'>
+                    <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" />
+                </div>
+
+                <div id="signin">
+                    <span class="close-btn" (click)="close()">
+                        <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png" />
+                    </span>
+
+                    <form [formGroup]="signForm">
+
+                        <input type="text" name="firstName" placeholder="First Name" formControlName="firstName">
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('required') && signForm.get('firstName').touched">
+                            Please input your firstName
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('minlength') && signForm.get('firstName').touched">
+                            Minimum 4 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('maxlength') && signForm.get('firstName').touched">
+                            Maximum 30 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('pattern') && signForm.get('firstName').touched">
+                            Just use alphabet character
+                        </span>
+
+                        <input type="text" name="lastName" placeholder="Last Name" formControlName="lastName">
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('required') && signForm.get('firstName').touched">
+                            Please input your firstName
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('minlength') && signForm.get('firstName').touched">
+                            Minimum 4 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('maxlength') && signForm.get('firstName').touched">
+                            Maximum 30 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('firstName').hasError('pattern') && signForm.get('firstName').touched">
+                            Just use alphabet character
+                        </span>
+
+                        <input type="email" name="email" placeholder="E-mail" formControlName="email">
+                        <span class="error" *ngIf="signForm.get('email').hasError('required') && signForm.get('email').touched">
+                            Please input your email
+                        </span>
+                        <span class="error" *ngIf="signForm.get('email').hasError('pattern') && signForm.get('email').touched">
+                            invalid e-mail
+                        </span>
+
+                        <input type="number" name="phoneNumber" placeholder="phoneNumber" formControlName="phoneNumber">
+                        <!-- <input type="text" name="city" placeholder="City" formControlName="city">
+                        <input type="text" name="country" placeholder="Country" formControlName="country">
+                        <input type="number" name="noStreet" placeholder="No.Street" formControlName="street"> -->
+                        <input type="password" name="pass" placeholder="Password" formControlName="password">
+                        <span class="error" *ngIf="signForm.get('password').hasError('required') && signForm.get('password').touched">
+                            Please input your password
+                        </span>
+                        <span class="error" *ngIf="signForm.get('password').hasError('minlength') && signForm.get('password').touched">
+                            Minimum 6 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('password').hasError('maxlength') && signForm.get('password').touched">
+                            Maximum 12 characters
+                        </span>
+                        <span class="error" *ngIf="signForm.get('password').hasError('pattern') && signForm.get('password').touched">
+                            Just use alphabet character and numbers
+                        </span>
+
+                        <a (click)="signIn()">Sign in</a>
+                        <div id="have-account">
+                            <span id="haveAcc" (click)='loginModule()'>Have Account Exit</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="login">
+                    <span class="close-btn" (click)="close()">
+                        <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png" />
+                    </span>
+                    <form [formGroup]="loginForm">
+                        <input type="email" formControlName="email" name="email" placeholder="E-mail">
+                        <span class="error" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched">
+                            Please input your email
+                        </span>
+                        <input type="password" formControlName="password" name="password" placeholder="Password">
+                        <span class="error" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+                            Please input your password
+                        </span>
+                        <a (click)="login()">Log in</a>
+
+                        <div id="remember-container">
+                            <input type="checkbox" class="checkbox" checked="checked" />
+                            <span id="remember">Remember me</span>
+                            <br>
+                            <span id="forgotten-pass" (click)='forgottenModule()'>Forgotten password</span>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Forgotten Password Container -->
+                <div id="forgotten">
+                    <!-- <h1>Forgotten</h1> -->
+                    <span class="close-btn" (click)="close()">
+                        <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png" />
+                    </span>
+
+                    <form>
+                        <input type="email" name="email" placeholder="E-mail">
+                        <a class="orange-btn">Get new password</a>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</ion-content>

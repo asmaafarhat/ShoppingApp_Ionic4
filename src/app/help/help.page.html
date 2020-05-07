@@ -1,0 +1,68 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <!-- <ion-tab-button tab="back" (click)="BackBtn()"> -->
+        <!-- <ion-label>Back</ion-label> -->
+        <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+        <!-- </ion-tab-button> -->
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Help Center</ion-title>
+</ion-toolbar>
+
+<ion-menu side="end" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle>
+                <ion-item (click)="Profile()">Profile Details</ion-item>
+                <ion-item (click)="ViewCart()">Orders</ion-item>
+                <ion-item (click)="Help()">Help Center</ion-item>
+                <ion-item (click)="logout()">Logout</ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+<ion-content>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </p>
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </p>
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </p>
+    </div>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+    <!-- edit it to last page -->
+    <ion-tab-button tab="back" (click)="BackBtn()">
+        <ion-label>Back</ion-label>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile" (click)="ProfileBtn()">
+        <ion-label>Profile</ion-label>
+        <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="categories" (click)="CategoryBtn()">
+        <ion-label>Categories</ion-label>
+        <ion-icon name="apps-outline"></ion-icon>
+    </ion-tab-button>
+</ion-tab-bar>

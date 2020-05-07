@@ -1,0 +1,39 @@
+ion-toolbar {
+    --background: #a47dc7;
+    color: white;
+    ion-buttons {
+        ion-button {
+            ion-icon {
+                font-size: 30px;
+            }
+            ion-badge {
+                background-color: white;
+                color: #a47dc7;
+                // font-size: 24px;
+            }
+        }
+        ion-menu-button {
+            font-size: 30px;
+        }
+    }
+    ion-title {
+        text-align: center;
+    }
+}
+
+ion-menu {
+    ion-header {
+        ion-toolbar {
+            ion-title {
+                text-align: center;
+            }
+        }
+    }
+    ion-content {
+        ion-list {
+            ion-item {
+                color: #a47dc7;
+            }
+        }
+    }
+}

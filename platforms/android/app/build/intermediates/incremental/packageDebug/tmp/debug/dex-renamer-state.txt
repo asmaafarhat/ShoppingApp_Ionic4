@@ -1,0 +1,4 @@
+#Wed Apr 01 12:50:49 EET 2020
+base.0=C\:\\Users\\tabarak\\Downloads\\ShoppingApp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

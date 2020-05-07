@@ -1,0 +1,136 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-tab-button tab="back" (click)="BackBtn()">
+            <!-- <ion-label>Back</ion-label> -->
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-tab-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Checkout</ion-title>
+</ion-toolbar>
+
+<ion-menu side="end" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle>
+                <ion-item (click)="Profile()">Profile Details</ion-item>
+                <ion-item (click)="ViewCart()">Orders</ion-item>
+                <ion-item (click)="Help()">Help Center</ion-item>
+                <ion-item (click)="logout()">Logout</ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+<ion-content>
+    <form [formGroup]="ConfirmForm">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+                <ion-label position="stacked">First Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" name="firstName" placeholder="First Name" formControlName="firstName">
+                </ion-input>
+                <!-- <ion-input required type="text" name="firstName" placeholder="First Name" formControlName="firstName" oninput="handleFirstNameValue(event)"></ion-input> -->
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('required') && ConfirmForm.get('firstName').touched">
+          Please input your firstName
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('minlength') && ConfirmForm.get('firstName').touched">
+          Minimum 4 characters
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('maxlength') && ConfirmForm.get('firstName').touched">
+          Maximum 30 characters
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('pattern') && ConfirmForm.get('firstName').touched">
+          Just use alphabet character
+        </span>
+
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Last Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" name="lastName" placeholder="Last Name" formControlName="lastName"></ion-input>
+                <!-- <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input> -->
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('required') && ConfirmForm.get('firstName').touched">
+          Please input your firstName
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('minlength') && ConfirmForm.get('firstName').touched">
+          Minimum 4 characters
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('maxlength') && ConfirmForm.get('firstName').touched">
+          Maximum 30 characters
+        </span>
+                <span class="error" *ngIf="ConfirmForm.get('firstName').hasError('pattern') && ConfirmForm.get('firstName').touched">
+          Just use alphabet character
+        </span>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Phone Number
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input type="number" name="phoneNumber" placeholder="phoneNumber" formControlName="phoneNumber"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('phoneNumber').hasError('required') && ConfirmForm.get('phoneNumber').touched">
+          Please input your phoneNumber
+        </span>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Address
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input placeholder="Address Line 1" name="address1" formControlName="address1"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('address1').hasError('required') && ConfirmForm.get('address1').touched">
+          Please input your first address
+        </span>
+                <ion-input placeholder="Address Line 2" name="address2" formControlName="address2"></ion-input>
+                <!-- <span class="error" *ngIf="ConfirmForm.get('address2').hasError('required') && ConfirmForm.get('address2').touched">
+          Please input your second address
+        </span> -->
+                <ion-input placeholder="City" name="city" formControlName="city"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('city').hasError('required') && ConfirmForm.get('city').touched">
+          Please input your city
+        </span>
+                <ion-input placeholder="State" name="State" formControlName="State"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('State').hasError('required') && ConfirmForm.get('State').touched">
+          Please input your State
+        </span>
+                <ion-input type="number" placeholder="Street" name="street" formControlName="street"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('street').hasError('required') && ConfirmForm.get('street').touched">
+          Please input your street
+        </span>
+                <ion-input type="number" placeholder="Zip Code" name="zipCode" formControlName="zipCode"></ion-input>
+                <span class="error" *ngIf="ConfirmForm.get('zipCode').hasError('required') && ConfirmForm.get('zipCode').touched">
+          Please input your zipCode
+        </span>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Notes</ion-label>
+                <ion-textarea></ion-textarea>
+            </ion-item>
+        </ion-list>
+
+        <!-- <div class="ion-padding">
+            <ion-button expand="block" color="success" type="submit" class="ion-no-margin"> Next</ion-button>
+        </div> -->
+    </form>
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+    <ion-tab-button tab="next" (click)="Next()">
+        <ion-label>Next</ion-label>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-tab-button>
+</ion-tab-bar>

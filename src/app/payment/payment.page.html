@@ -1,0 +1,128 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-tab-button tab="back" (click)="BackBtn()">
+            <!-- <ion-label>Back</ion-label> -->
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-tab-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons> -->
+
+    <ion-title>Checkout</ion-title>
+</ion-toolbar>
+
+<ion-content>
+    <ion-radio-group value="Cash" #group>
+        <ion-list-header>
+            <ion-label>Payment method</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label> Cash</ion-label>
+            <ion-radio slot="start" value="Cash"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="card-outline"></ion-icon>
+            <ion-label> Credit</ion-label>
+            <ion-radio slot="start" value="Credit"></ion-radio>
+        </ion-item>
+
+        <!-- <ion-item>
+      <ion-label>Buford</ion-label>
+      <ion-radio slot="start" value="buford"></ion-radio>
+    </ion-item> -->
+    </ion-radio-group>
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+    <ion-tab-button tab="next" (click)="openModal(template,credit,group.value)">
+        <ion-label>Next</ion-label>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-tab-button>
+</ion-tab-bar>
+
+
+
+<ng-template #template>
+    <div class="modal-body">
+        Will arrive in 4 days
+    </div>
+</ng-template>
+
+<ng-template #credit>
+    <div class="modal-body" class="creditModal">
+        <form class="credit-card" [formGroup]="ConfirmForm">
+            <div class="form-header">
+                <h4>Credit card detail</h4>
+            </div>
+
+            <div class="form-body">
+                <!-- Card Number -->
+                <input type="text" class="card-number" placeholder="Card Number" name="cardNumber" formControlName="cardNumber">
+                <span class="error" *ngIf="ConfirmForm.get('cardNumber').hasError('required') && ConfirmForm.get('cardNumber').touched">
+                    Please input your cardNumber
+                  </span>
+                <!-- Date Field -->
+                <div class="date-field">
+                    <div class="month">
+                        <select name="Month" formControlName="Month">
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
+              </select>
+
+                    </div>
+                    <div class="year">
+                        <select name="Year" formControlName="Year">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+
+                    </div>
+                    <span class="error" *ngIf="ConfirmForm.get('Month').hasError('required') && ConfirmForm.get('Month').touched">
+                        Please input your Month
+                      </span>
+                    <span class="error" *ngIf="ConfirmForm.get('Year').hasError('required') && ConfirmForm.get('Year').touched">
+                        Please input your Year
+                      </span>
+                </div>
+
+                <!-- Card Verification Field -->
+                <div class="card-verification">
+                    <div class="cvv-input">
+                        <input type="text" placeholder="CVV" name="CVV" formControlName="CVV">
+                    </div>
+                    <div class="cvv-details">
+                        <p>3 or 4 digits usually found <br> on the signature strip</p>
+                    </div>
+                    <span class="error" *ngIf="ConfirmForm.get('CVV').hasError('required') && ConfirmForm.get('CVV').touched">
+                        Please input your CVV
+                      </span>
+                </div>
+
+                <!-- Buttons -->
+                <!-- <button type="submit" class="proceed-btn"><a href="#">Proceed</a></button> -->
+                <button type="submit" class="paypal-btn" (click)="Pay()"><a>Pay</a></button>
+            </div>
+        </form>
+    </div>
+</ng-template>

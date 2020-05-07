@@ -1,0 +1,33 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="cartEle()">
+            <ion-icon name="cart-outline"></ion-icon>
+            <ion-badge>{{global.counter}}</ion-badge>
+        </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+        <!-- <ion-menu-button auto-hide="false" (click)="openFirst()"></ion-menu-button> -->
+    </ion-buttons>
+
+    <ion-title>{{pageName}}</ion-title>
+</ion-toolbar>
+
+<ion-menu side="end" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle>
+                <ion-item (click)="Profile()">Profile Details</ion-item>
+                <ion-item (click)="ViewCart()">Orders</ion-item>
+                <ion-item (click)="Help()">Help Center</ion-item>
+                <ion-item (click)="logout()">Logout</ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>

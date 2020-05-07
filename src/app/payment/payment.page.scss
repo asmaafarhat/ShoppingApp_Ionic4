@@ -1,0 +1,129 @@
+ion-toolbar {
+    --background: #a47dc7;
+    color: white;
+    ion-buttons {
+        ion-button {
+            ion-icon {
+                font-size: 30px;
+            }
+            ion-badge {
+                background-color: white;
+                color: #a47dc7;
+                // font-size: 24px;
+            }
+        }
+        ion-menu-button {
+            font-size: 30px;
+        }
+    }
+    ion-title {
+        text-align: center;
+    }
+}
+
+ion-tab-bar {
+    --background: #a47dc7;
+    ion-tab-button {
+        color: white;
+    }
+}
+
+ion-content {
+    ion-radio-group {
+        ion-list-header {
+            text-align: center;
+            font-size: x-large;
+            color: #a47dc7;
+        }
+    }
+}
+
+.credit-card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, .10);
+}
+
+.form-header {
+    padding: 0px 30px 0;
+    border-bottom: 1px solid #e1e8ee;
+    color: #a47dc7;
+}
+
+.form-body {
+    padding: 30px 30px 20px;
+}
+
+.month select,
+.year select {
+    width: 145px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    // border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    // background: url('caret.png') no-repeat;
+    background-position: 85% 50%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.month select {
+    float: left;
+}
+
+.year select {
+    float: right;
+}
+
+.card-number {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    // border: 2px solid #e1e8ee;
+    border-radius: 6px;
+}
+
+.cvv-input input {
+    float: left;
+    width: 145px;
+    padding-left: 20px;
+    // border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    // background: #fff;
+}
+
+.cvv-details {
+    font-size: 70%;
+    line-height: 16px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.cvv-details p {
+    margin-top: 6px;
+}
+
+.paypal-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 6px;
+    background: #a47dc7;
+}
+
+.paypal-btn a {
+    text-decoration: none;
+}
+
+.paypal-btn a {
+    color: rgba(242, 242, 242, .7);
+}
+
+modal-container {
+    div {
+        position: relative !important;
+        top: 23% !important;
+    }
+}

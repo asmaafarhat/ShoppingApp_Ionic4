@@ -1,0 +1,23 @@
+<app-share [pageName]='title'>
+</app-share>
+<ion-content>
+    <ion-card>
+        <img [src]="card.img" />
+        <ion-card-header>
+            <!-- <ion-card-subtitle>Destination</ion-card-subtitle> -->
+            <ion-card-title>{{card.title}} <span *ngIf="card.new" class="badge badge-danger">New</span></ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+            {{card.description}}
+        </ion-card-content>
+        <ion-item>
+            <!-- <ion-icon name="pin" slot="start"></ion-icon>
+              <ion-label>ion-item in a card, icon left, button right</ion-label> -->
+            <!-- <button class="btnAdd" slot="start" (click)="addToCard()">Add to card</button> -->
+            <button class="btnView" slot="end" (click)="viewElem(card)">View</button>
+        </ion-item>
+    </ion-card>
+</ion-content>
+
+<shared-footer></shared-footer>

@@ -1,0 +1,61 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="cancel()">
+            Cancel All
+            <!-- <ion-icon name="cart-outline"></ion-icon> -->
+        </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Cart</ion-title>
+</ion-toolbar>
+
+<ion-menu side="end" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle>
+                <ion-item (click)="Profile()">Profile Details</ion-item>
+                <ion-item (click)="ViewCart()">Orders</ion-item>
+                <ion-item (click)="Help()">Help Center</ion-item>
+                <ion-item (click)="logout()">Logout</ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+<ion-content>
+    <ion-card *ngFor="let card of cards ; index as i ;">
+        <img [src]="card.img" />
+        <ion-card-header>
+            <ion-card-title>{{card.title}} <span *ngIf="card.new" class="badge badge-danger">New</span></ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+            {{card.description}}
+        </ion-card-content>
+        <ion-item>
+            <button class="btnAdd" slot="start" (click)="removeFromCard(i)">Remove from card</button>
+            <button class="btnView" slot="end" (click)="viewElem(card)">View</button>
+        </ion-item>
+    </ion-card>
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+    <ion-tab-button tab="categories" (click)="CategoryBtn()">
+        <ion-label>Categories</ion-label>
+        <ion-icon name="apps-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="confirm" (click)="Confirm()">
+        <ion-label>Confirm total price {{total}}</ion-label>
+        <ion-icon name="cart-outline"></ion-icon>
+    </ion-tab-button>
+</ion-tab-bar>
+<!-- <shared-footer></shared-footer> -->
